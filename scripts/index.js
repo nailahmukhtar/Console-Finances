@@ -104,21 +104,18 @@ console.log("Total Profit: $" + total_profit);
 
 
 var average_change = [];
-var average = 0;
+var difference = 0;
 
 for (let item = 0, item2 = 1; item < finances.length, item2 < finances.length; item++, item2++) {
-    // average = finances[item][1]- finances[item2][1];
-    average = finances[item2][1]- finances[item][1];
-    average_change.push([finances[item2][0], average]);
+    difference = finances[item2][1]- finances[item][1];
+    average_change.push([finances[item2][0], difference]);
     }
 
-//console.log(average_change); //logs average change array values
 var total_average_change = 0;
 for (let item = 0; item < average_change.length; item++) {
         total_average_change = total_average_change + average_change[item][1];
     }
 
-// console.log(total_average_change);
-var average_change_total = total_profit/total_months;
+var average_change_total = total_average_change/total_months;
 
 console.log("Average Change: $" +  average_change_total.toFixed(2));

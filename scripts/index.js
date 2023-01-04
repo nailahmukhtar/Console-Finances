@@ -106,7 +106,7 @@ console.log("Total Months: " + total_months);
 // Console log for total profits
 console.log("Total Profit: $" + total_profit);
 
-
+//average change calculations
 var average_change = [];
 var difference = 0;
 
@@ -125,15 +125,18 @@ var average_change_total = total_average_change/total_months;
 //Console Log for Average of Changes in Profit over the Period
 console.log("Average Change: $" +  average_change_total.toFixed(2));
 
-
+// Calculation for largest increase in profits
 const biggestIncrease = average_change.reduce((max, arr) => {
     return max[1] >= arr[1] ? max : arr;
   });
 
+//Console Log for increase profits
 console.log("Greatest Increase in Profits: " + biggestIncrease[0] + " ($" + biggestIncrease[1] + ")");
 
+// Calculation for largest decrease in profits
 const biggestDecrease = average_change.reduce((max, arr) => {
     return max[1] <= arr[1] ? max : arr;
   });
 
-  console.log("Greatest Decrease in Profits: " + biggestDecrease[0] + " ($" + biggestDecrease[1] + ")");
+//Console Log for increase profits
+console.log("Greatest Decrease in Profits: " + biggestDecrease[0] + " ($" + biggestDecrease[1] + ")");

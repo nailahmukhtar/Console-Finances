@@ -91,15 +91,19 @@ var finances = [
 var total_months = 0;
 var total_profit = 0;
 
+//calculation for total profits and total months
 for (let item = 0; item < finances.length; item++) {
     total_months = total_months + 1;
     total_profit = total_profit + finances[item][1];
 }
 
-// Logs for question 1 and 2
 console.log("Financial Analysis"); 
 console.log("----------------------------");
+
+// Console Log for total number of months
 console.log("Total Months: " + total_months);
+
+// Console log for total profits
 console.log("Total Profit: $" + total_profit);
 
 
@@ -118,4 +122,18 @@ for (let item = 0; item < average_change.length; item++) {
 
 var average_change_total = total_average_change/total_months;
 
+//Console Log for Average of Changes in Profit over the Period
 console.log("Average Change: $" +  average_change_total.toFixed(2));
+
+
+const biggestIncrease = average_change.reduce((max, arr) => {
+    return max[1] >= arr[1] ? max : arr;
+  });
+
+console.log("Greatest Increase in Profits: " + biggestIncrease[0] + " ($" + biggestIncrease[1] + ")");
+
+const biggestDecrease = average_change.reduce((max, arr) => {
+    return max[1] <= arr[1] ? max : arr;
+  });
+
+  console.log("Greatest Decrease in Profits: " + biggestDecrease[0] + " ($" + biggestDecrease[1] + ")");

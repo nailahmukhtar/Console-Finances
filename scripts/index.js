@@ -120,7 +120,7 @@ for (let item = 0; item < average_change.length; item++) {
         total_average_change = total_average_change + average_change[item][1];
     }
 
-var average_change_total = total_average_change/total_months;
+var average_change_total = total_average_change/(total_months - 1);
 
 //Console Log for Average of Changes in Profit over the Period
 console.log("Average Change: $" +  average_change_total.toFixed(2));
